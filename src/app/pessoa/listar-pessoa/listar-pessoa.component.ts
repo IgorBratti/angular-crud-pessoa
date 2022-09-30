@@ -19,7 +19,14 @@ export class ListarPessoaComponent implements OnInit {
   }
 
   listarTodos(): Pessoa[] {
-    return this.PessoaService.listarTodos();
+   // return this.PessoaService.listarTodos();
+
+   return [
+    new Pessoa(1, "Igor", 30),
+    new Pessoa(2, "amanda", 32),
+    new Pessoa(3, "Rodrigo", 54),
+    new Pessoa(4, "Luiz", 23)
+   ]
   }
 
 }
