@@ -1,22 +1,30 @@
-import { PessoaService } from './services/pessoa.service';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { InserirPessoaComponent } from './inserir-pessoa/inserir-pessoa.component';
+import { RouterModule } from '@angular/router';
+import { IConfig, NgxMaskModule } from 'ngx-mask';
 
+import { EditarPessoaComponent } from './editar-pessoa/editar-pessoa.component';
+import { InserirPessoaComponent } from './inserir-pessoa/inserir-pessoa.component';
+import { ListarPessoaComponent } from './listar-pessoa/listar-pessoa.component';
+import { PessoaService } from './services/pessoa.service';
+import { SharedModule } from '../shared';
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
 
 
 @NgModule({
   declarations: [
     ListarPessoaComponent,
-    InserirPessoaComponent
+    InserirPessoaComponent,
+    EditarPessoaComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    NgxMaskModule.forRoot(),
+    SharedModule
   ],
   providers: [
     PessoaService

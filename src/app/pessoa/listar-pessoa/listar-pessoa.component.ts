@@ -1,7 +1,7 @@
 import { PessoaService } from './../services/pessoa.service';
 import { Component, OnInit } from '@angular/core';
 
-import { Pessoa } from 'src/app/shared/models/pessoa.model';
+import { Pessoa } from 'src/app/shared';
 
 @Component({
   selector: 'app-listar-pessoa',
@@ -19,14 +19,15 @@ export class ListarPessoaComponent implements OnInit {
   }
 
   listarTodos(): Pessoa[] {
-   // return this.PessoaService.listarTodos();
+    return this.PessoaService.listarTodos();
+  }
 
-   return [
-    new Pessoa(1, "Igor", 30),
-    new Pessoa(2, "amanda", 32),
-    new Pessoa(3, "Rodrigo", 54),
-    new Pessoa(4, "Luiz", 23)
-   ]
+  remover($event: any, pessoa: Pessoa): void {
+    $event.preventDefault();
+    if (confirm(`Deseja realmente remover a pessoa ${pessoa.nome}?`)){
+      this.PessoaService.remover(pessoa.id!);
+      this.pessoas = this.listarTodos();
+    }
   }
 
 }
