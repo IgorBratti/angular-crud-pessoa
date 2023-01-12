@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { PessoaModule } from './pessoa/pessoa.module';
 
 import { SharedModule } from './shared';
+import { CidadeModule } from './cidade/cidade.module';
+import { EnderecoModule } from './endereco/endereco.module';
+import { EstadoModule } from './estado/estado.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import { SharedModule } from './shared';
     AppRoutingModule,
     SharedModule,
     PessoaModule,
-
+    EstadoModule,
+    CidadeModule,
+    EnderecoModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
