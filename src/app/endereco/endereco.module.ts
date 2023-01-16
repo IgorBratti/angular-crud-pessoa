@@ -4,7 +4,9 @@ import { EditarEnderecoComponent } from './editar-endereco/editar-endereco.compo
 import { InserirEnderecoComponent } from './inserir-endereco/inserir-endereco.component';
 import { ListarEnderecoComponent } from './listar-endereco/listar-endereco.component';
 import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.component';
-
+import { EnderecoService } from './services/endereco.service';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +17,12 @@ import { ModalEnderecoComponent } from './modal-endereco/modal-endereco.componen
     ModalEnderecoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
+  ],
+  providers: [
+    EnderecoService
   ]
 })
 export class EnderecoModule { }

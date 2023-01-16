@@ -10,7 +10,7 @@ import { CidadeModule } from './cidade/cidade.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { EstadoModule } from './estado/estado.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EstadoModule,
     CidadeModule,
     EnderecoModule,
-    NgbModule
+    NgbModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

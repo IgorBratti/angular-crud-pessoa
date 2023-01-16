@@ -4,8 +4,9 @@ import { EditarCidadeComponent } from './editar-cidade/editar-cidade.component';
 import { InserirCidadeComponent } from './inserir-cidade/inserir-cidade.component';
 import { ListarCidadeComponent } from './listar-cidade/listar-cidade.component';
 import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
-
-
+import { CidadeService } from './services/cidade.service';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,12 @@ import { ModalCidadeComponent } from './modal-cidade/modal-cidade.component';
     ModalCidadeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    RouterModule
+  ],
+  providers: [
+    CidadeService
   ]
 })
 export class CidadeModule { }
